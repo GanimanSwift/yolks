@@ -25,16 +25,16 @@
 cd /home/container
 
 # Copy everything from the host machine server folder to /server
-git clone https://github.com/LandSandBoat/server.git . || git pull
+#git clone https://github.com/LandSandBoat/server.git . || git pull
 
 # Configure and build
-mkdir docker_build && cd docker_build && cmake .. && make -j $(nproc) && cd .. && rm -r /server/docker_build
+#mkdir docker_build && cd docker_build && cmake .. && make -j $(nproc) && cd .. && rm -r /server/docker_build
 
 # Copy the docker config files to the conf folder instead of the default config
-cp conf/default/* conf/
+#cp conf/default/* conf/
 
 # Copy the docker settings files to the settings folder instead of the default settings
-cp scripts/settings/default/* scripts/settings/
+#cp scripts/settings/default/* scripts/settings/
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
